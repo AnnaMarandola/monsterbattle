@@ -17,13 +17,14 @@ class MonsterCard extends Component {
     };
     this.getMonster1 = this.getMonster1.bind(this);
     this.getMonster2 = this.getMonster2.bind(this);
-    this.fight = this.fight.bind(this);
+    this.round1 = this.round1.bind(this);
+    this.round2 = this.round1.bind(this);
   }
   
   componentDidMount() {
     this.getMonster1();
     this.getMonster2();
-    this.fight();
+    this.round1();
   }
   
   componentWillUpdate() {
@@ -50,9 +51,28 @@ class MonsterCard extends Component {
   }
   
   
-  fight() {
-      this.state.Monster2 && this.setState({ Monster2: {...this.state.Monster2, defense: (this.state.Monster2.defense - this.state.Monster1.attack)} })
+  round1() {
+    if (this.state.Monster2) {
+      if (this.state.Monster2.defense > 0) {
+        this.setState({ Monster2: {...this.state.Monster2, defense: (this.state.Monster2.defense - this.state.Monster1.attack)} })
+      }
+      else {
+        this.setState({ Monster2: {...this.state.Monster2, defense: 'died'}})
+      }
+    }
   }
+
+  round2() {
+    if (this.state.Monster1) {
+      if (this.state.Monster1.defense > 0) {
+        this.setState({ Monster1: {...this.state.Monster1, defense: (this.state.Monster1.defense - this.state.Monster2.attack)} })
+      }
+      else {
+        this.setState({ Monster1: {...this.state.Monster1, defense: 'died'}})
+      }
+    }
+  }
+    
   
 
   render() {
@@ -71,7 +91,7 @@ class MonsterCard extends Component {
           {this.state.Monster2 && <MonsterInfo infos={this.state.Monster2} />}
         </div>
         <div className="fightButton">
-          <button onClick={this.fight}></button>
+          <button className="buttonRound1" onClick={this.round1}></button>
         </div>
       </div>
     );
