@@ -1,11 +1,11 @@
 import React from 'react';
-import GetMonster from './components/GetMonster';
+import MonsterCard from './components/MonsterCard';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-    <p><GetMonster /></p>
+    <p><MonsterCard /></p>
     </div>
   );
 }
