@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+import GetMonster from './components/GetMonster';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-    
+    <p><GetMonster /></p>
     </div>
   );
 }
