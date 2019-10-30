@@ -3,6 +3,16 @@
   padding: 0;
 }
 
+.div-globale {
+  display: flex;
+  flex-direction: column;
+}
+
+.player1,
+.player2 {
+  width: 30%;
+}
+
 figure {
   width: 250px;
   margin-left: 100px;
@@ -11,6 +21,7 @@ figure {
   border-right-width: 15px;
   border-left-width: 15px;
   border-radius: 2%;
+  flex-direction: column;
 }
 
 .nameNspecial {
