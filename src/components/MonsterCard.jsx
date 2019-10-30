@@ -10,27 +10,46 @@ class MonsterCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Monster: null,
+      Monster1: null,
+      Monster2: null,
+
     };
-    this.getMonster = this.getMonster.bind(this);
+    this.getMonster1 = this.getMonster1.bind(this);
+    this.getMonster2 = this.getMonster2.bind(this);
+
   }
   componentDidMount() {
-    this.getMonster();
+    this.getMonster1()
+    this.getMonster2();
   }
-  getMonster() {
+  getMonster1() {
     axios.get('https://hackathon-wild-hackoween.herokuapp.com/monsters')
       .then(response => response.data)
       .then(data => data.monsters[randomMonster(20)])
       .then(MonsterInfo => {
-        this.setState({ Monster: MonsterInfo })
+        this.setState({ Monster1: MonsterInfo })
       })
   }
+
+  getMonster2() {
+    axios.get('https://hackathon-wild-hackoween.herokuapp.com/monsters')
+      .then(response => response.data)
+      .then(data => data.monsters[randomMonster(20)])
+      .then(MonsterInfo => {
+        this.setState({ Monster2: MonsterInfo, })
+      })
+  }
+
   render() {
     return (
       <div>
-        <div>
-          <button onClick={this.getMonster}>Get Monster</button>
-          {this.state.Monster && <MonsterInfo infos={this.state.Monster} />}
+        <div className = "player1">
+          <button onClick={this.getMonster1}>Bloody Player 1</button>
+          {this.state.Monster1 && <MonsterInfo infos={this.state.Monster1} />}
+        </div>
+        <div className = "player2">
+          <button onClick={this.getMonster2}>Bloody Player 2</button>
+          {this.state.Monster2 && <MonsterInfo infos={this.state.Monster2} />}
         </div>
       </div>
     );
