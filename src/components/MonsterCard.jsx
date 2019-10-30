@@ -43,7 +43,7 @@ class MonsterCard extends Component {
 
   render() {
     return (
-      <div className="div-Globale">
+      <div className="div-globale">
         <div className="player1">
           <button className="btn-player1" onClick={this.getMonster1}>
             Bloody Player 1

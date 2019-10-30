@@ -5,7 +5,11 @@
 
 .div-globale {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+}
+
+.btn-player1, .btn-pllayer2 {
+  margin: 2em;
 }
 
 .player1,
@@ -15,7 +19,6 @@
 
 figure {
   width: 250px;
-  margin-left: 100px;
   background-color: rgb(100, 0, 0);
   border: 10px solid rgb(100, 0, 0);
   border-right-width: 15px;
