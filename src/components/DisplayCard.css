@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  width: 250px;
+  margin-left: 100px;
+  background-color: rgb(100, 0, 0);
+  border: 10px solid rgb(100, 0, 0);
+  border-right-width: 15px;
+  border-left-width: 15px;
+  border-radius: 2%;
+}
+
+.nameNspecial {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5% 5% 0 0;
+  background-color: #252525;
+  color: white;
+}
+
+small {
+  color: rgb(3, 128, 3);
+}
+
+.imageMonster {
+  text-align: center;
+}
+
+.bodyCard {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url('../assets/blood.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.attackNdefenseContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+  background-color: transparent;
+}
+
+blockquote {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  text-align: justify;
+  font-size: 0.6em;
+  background-color: #25252563;
+}
+
+blockquote p {
+  margin: 8%;
+}
+
+.bloodBottomCard {
+  margin-left: 105px;
+  height: 60px;
+  width: 270px;
+}
