@@ -12,18 +12,33 @@ const monster = {
 }
 
 
-class DisplayCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  };
-  }
-  render() {
-    return (
-      
-    );
-  }
+function DisplayCard() {
+  return (
+    <div>
+      <div>
+        <p>{monster.name}</p>
+        <p>{monster.special}</p>
+      </div>
+      <div>
+        <img src={monster.picture}/>
+      </div>
+      <div>
+        <p>{monster.description}</p>
+      </div>
+      <div>
+        <div>
+          <div>
+            <p>Attack</p>
+            <p>Defense</p>
+          </div>
+          <div>
+            <p>{monster.attack}</p>
+            <p>{monster.defense}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default DisplayCard;
-
-
