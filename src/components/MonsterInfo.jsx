@@ -5,16 +5,16 @@ import './MonsterInfo.css';
 const MonsterInfo = ({ infos }) => {
   const { name, picture, special, attack, defense, description } = infos;
   return (
-    <div>
+    <div className="cardBehindButton">
       <figure>
         <div className="nameNspecial">
           <p>{name}</p>
-          <small>{special}</small>
         </div>
         <div className="imageMonster">
           <img src={picture} />
         </div>
         <div className="bodyCard">
+          <small>{special}</small>
           <div className="attackNdefenseContainer">
             <div className="attackNdefenseTexts">
               <p>Attack</p>

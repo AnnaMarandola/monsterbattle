@@ -12,6 +12,11 @@
   margin: 2em;
 }
 
+.cardBehindButton {
+  display: flex;
+  justify-content: center;
+}
+
 .player1,
 .player2 {
   width: 30%;
@@ -21,14 +26,16 @@ figure {
   width: 250px;
   background-color: rgb(100, 0, 0);
   border: 10px solid rgb(100, 0, 0);
-  border-right-width: 15px;
-  border-left-width: 15px;
+  border-right-width: 20px;
+  border-left-width: 20px;
+  box-shadow: 5px 5px 5px #252525;
   border-radius: 2%;
   flex-direction: column;
 }
 
 .nameNspecial {
   height: 35px;
+  padding: 0.4em;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -37,8 +44,14 @@ figure {
   color: white;
 }
 
+.nameNspecial p {
+ font-size: 1em;
+}
+
 small {
-  color: rgb(3, 128, 3);
+  color: rgb(0, 223, 0);
+  font-weight: bold;
+  align-self: flex-end;
 }
 
 .imageMonster {
