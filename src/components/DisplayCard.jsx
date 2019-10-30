@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './DisplayCard.css';
 
 const monster = {
   id: 18,
@@ -14,30 +15,30 @@ const monster = {
 
 function DisplayCard() {
   return (
-    <div>
-      <div>
+    <figure>
+      <div className="nameNspecial">
         <p>{monster.name}</p>
         <p>{monster.special}</p>
       </div>
-      <div>
+      <div className="imageMonster">
         <img src={monster.picture}/>
       </div>
-      <div>
-        <p>{monster.description}</p>
-      </div>
-      <div>
-        <div>
-          <div>
+      <div className="bodyCard">
+        <div className="attackNdefenseContainer">
+          <div className="attackNdefenseTexts">
             <p>Attack</p>
             <p>Defense</p>
           </div>
-          <div>
+          <div className="attackNdefenseInts">
             <p>{monster.attack}</p>
             <p>{monster.defense}</p>
           </div>
         </div>
       </div>
-    </div>
+      <blockquote>
+        <p>{monster.description}</p>
+      </blockquote>
+    </figure>
   )
 }
 

@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  width: 300px;
+  margin-left: 10%;
+  border: 4mm ridge rgba(158, 0, 40, 0.6);
+}
+
+.nameNspecial {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: grey;
+  border-radius: 5% 5% 0% 0%;
+}
+
+.imageMonster {
+  text-align: center;
+}
+
+.bodyCard {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: grey;
+}
+
+.attackNdefenseContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+  background-color: blueviolet;
+}
+
+blockquote {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  text-align: center;
+  font-size: fit-width;
+  background-color: grey;
+}
