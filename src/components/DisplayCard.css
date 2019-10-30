@@ -4,18 +4,27 @@
 }
 
 figure {
-  width: 300px;
-  margin-left: 10%;
-  border: 4mm ridge rgba(158, 0, 40, 0.6);
+  width: 250px;
+  margin-left: 100px;
+  background-color: rgb(100, 0, 0);
+  border: 10px solid rgb(100, 0, 0);
+  border-right-width: 15px;
+  border-left-width: 15px;
+  border-radius: 2%;
 }
 
 .nameNspecial {
-  height: 45px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: grey;
-  border-radius: 5% 5% 0% 0%;
+  border-radius: 5% 5% 0 0;
+  background-color: #252525;
+  color: white;
+}
+
+small {
+  color: rgb(3, 128, 3);
 }
 
 .imageMonster {
@@ -23,11 +32,15 @@ figure {
 }
 
 .bodyCard {
-  height: 100px;
+  height: 200px;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  background-color: grey;
+  flex-direction: column;
+  color: white;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url('../assets/blood.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .attackNdefenseContainer {
@@ -35,14 +48,24 @@ figure {
   justify-content: space-around;
   align-items: center;
   width: 60%;
-  background-color: blueviolet;
+  background-color: transparent;
 }
 
 blockquote {
   display: flex;
   align-items: center;
   height: 60px;
-  text-align: center;
-  font-size: fit-width;
-  background-color: grey;
+  text-align: justify;
+  font-size: 0.6em;
+  background-color: #25252563;
+}
+
+blockquote p {
+  margin: 8%;
+}
+
+.bloodBottomCard {
+  margin-left: 105px;
+  height: 60px;
+  width: 270px;
 }

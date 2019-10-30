@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './DisplayCard.css';
+import bloodBottomCard from '../assets/bloodBottomCard.png'
+
 
 const monster = {
   id: 18,
@@ -15,30 +17,33 @@ const monster = {
 
 function DisplayCard() {
   return (
-    <figure>
-      <div className="nameNspecial">
-        <p>{monster.name}</p>
-        <p>{monster.special}</p>
-      </div>
-      <div className="imageMonster">
-        <img src={monster.picture}/>
-      </div>
-      <div className="bodyCard">
-        <div className="attackNdefenseContainer">
-          <div className="attackNdefenseTexts">
-            <p>Attack</p>
-            <p>Defense</p>
-          </div>
-          <div className="attackNdefenseInts">
-            <p>{monster.attack}</p>
-            <p>{monster.defense}</p>
-          </div>
+    <div>
+      <figure>
+        <div className="nameNspecial">
+          <p>{monster.name}</p>
+          <small>{monster.special}</small>
         </div>
-      </div>
-      <blockquote>
-        <p>{monster.description}</p>
-      </blockquote>
-    </figure>
+        <div className="imageMonster">
+          <img src={monster.picture}/>
+        </div>
+        <div className="bodyCard">
+          <div className="attackNdefenseContainer">
+            <div className="attackNdefenseTexts">
+              <p>Attack</p>
+              <p>Defense</p>
+            </div>
+            <div className="attackNdefenseInts">
+              <p>{monster.attack}</p>
+              <p>{monster.defense}</p>
+            </div>
+          </div>
+          <blockquote>
+            <p>{monster.description}</p>
+          </blockquote>
+        </div>
+      </figure>
+      <img src={bloodBottomCard} className="bloodBottomCard"/>
+    </div>
   )
 }
 
