@@ -20,6 +20,11 @@
         margin-top: 40px;
         color: whitesmoke;
         padding-top: 8px;
+        margin-right: 0;
+    }
+    
+    #score1 {
+        margin-left: 50px;
     }
     
     .btn-player1,
@@ -113,7 +118,7 @@
     }
     
     blockquote p {
-        margin: 8%;
+        margin: 20px;
     }
     
     .bloodBottomCard {
@@ -164,4 +169,11 @@
         padding-top: 1em;
         font-size: 2em;
         color: red;
+    }
+    
+    .container-backcard,
+    h1 {
+        display: flex;
+        justify-content: center;
+        ;
     }

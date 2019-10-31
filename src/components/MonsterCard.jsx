@@ -106,7 +106,7 @@ class MonsterCard extends Component {
     return (
       <div>
         <div className="div-globale">
-          <div className="score"> SCORE : <br/>{score1}</div>
+          <div className="score" id="score1"> SCORE : <br/>{score1}</div>
           <div className="player1">
             <button className="btn-player1" onClick={ choosedPlayer1 === 0 ? this.getMonster1 : null }>
               Choose Player 1
