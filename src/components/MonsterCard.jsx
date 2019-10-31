@@ -10,6 +10,10 @@ function randomMonster(max) {
 
 let choosedPlayer1 = 1;
 let choosedPlayer2 = 1;
+let tokenPlayer1 = 1;
+let tokenPlayer2 = 1;
+let score1 = 0;
+let score2 = 0;
 
 
 class MonsterCard extends Component {
@@ -17,12 +21,13 @@ class MonsterCard extends Component {
     super(props);
     this.state = {
       Monster1: null,
-      Monster2: null,
+      Monster2: null
     };
     this.getMonster1 = this.getMonster1.bind(this);
     this.getMonster2 = this.getMonster2.bind(this);
     this.attack1 = this.attack1.bind(this);
     this.attack2 = this.attack2.bind(this);
+    this.refreshGame = this.refreshGame.bind(this);
   }
   
   componentDidMount() {
@@ -59,9 +64,15 @@ class MonsterCard extends Component {
     if (this.state.Monster2) {
       if (this.state.Monster2.defense - this.state.Monster1.attack > 0) {
         this.setState({ Monster2: {...this.state.Monster2, defense: (this.state.Monster2.defense - this.state.Monster1.attack)} })
+        tokenPlayer1 -= 1;
+        tokenPlayer2 += 1;
       }
       else {
         this.setState({ Monster2: {...this.state.Monster2, defense: '0', isDead: true}});
+        
+        tokenPlayer2 = 0;
+        tokenPlayer1 = 0; 
+        score1 += 1;
       }
     }
   }
@@ -70,11 +81,25 @@ class MonsterCard extends Component {
     if (this.state.Monster1) {
       if (this.state.Monster1.defense - this.state.Monster2.attack > 0) {
         this.setState({ Monster1: {...this.state.Monster1, defense: (this.state.Monster1.defense - this.state.Monster2.attack)} })
+        tokenPlayer2 -= 1;
+        tokenPlayer1 += 1;
       }
       else {
         this.setState({ Monster1: {...this.state.Monster1, defense: '0', isDead: true}});
+        tokenPlayer1 = 0;
+        tokenPlayer2 = 0;
+        score2 += 1;
       }
     }
+  }
+
+  refreshGame() {
+    this.setState({Monster1: null})
+    this.setState({Monster2: null})
+    choosedPlayer1 = 0;
+    choosedPlayer2 = 0;
+    tokenPlayer1 = 1;
+    tokenPlayer2 = 1;
   }
 
   render() {
@@ -87,23 +112,28 @@ class MonsterCard extends Component {
             </button>
             {this.state.Monster1 && choosedPlayer1 !== 0 ? <MonsterInfo infos={this.state.Monster1} /> : <BackCard />}
           </div>
+          <div className="score"> prout: {score1}</div>
           <div className="player2">
             <button className="btn-player2" onClick={ choosedPlayer2 === 0 ? this.getMonster2 : null }>
               Choose Player 2
             </button>
             {this.state.Monster2 && choosedPlayer2 !== 0 ? <MonsterInfo infos={this.state.Monster2} /> : <BackCard />}
+          <div className="score"> rototo: {score2}</div>
           </div>
           <div className="fightButton">
           </div>
         </div>
         <div className="attackButtons">
-          <button onClick={this.attack1}>ULTRA BLOODY ATTACK 1</button>
-          <button onClick={this.attack2}>ULTRA BLOODY ATTACK 2</button>
+          <button onClick={tokenPlayer1 > 0 ? this.attack1 : null}>ULTRA BLOODY ATTACK 1</button>
+          <button onClick={tokenPlayer2 > 0 ? this.attack2 : null}>ULTRA BLOODY ATTACK 2</button>
+        </div>
+        <div className="nextroundButtons">
+          <button className={this.state.Monster1 && this.state.Monster1.isDead === true ? 'refreshButtonShowed' : 'refreshButtonHidden'} onClick={this.refreshGame}>Next Round</button>
+          <button className={this.state.Monster2 && this.state.Monster2.isDead === true ? 'refreshButtonShowed' : 'refreshButtonHidden'} onClick={this.refreshGame}>Next Round</button>
         </div>
       </div>
     );
   }
 }
-
 
 export default MonsterCard;
