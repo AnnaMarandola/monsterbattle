@@ -21,14 +21,13 @@ class MonsterCard extends Component {
     super(props);
     this.state = {
       Monster1: null,
-      Monster2: null,
-
+      Monster2: null
     };
     this.getMonster1 = this.getMonster1.bind(this);
     this.getMonster2 = this.getMonster2.bind(this);
     this.attack1 = this.attack1.bind(this);
     this.attack2 = this.attack2.bind(this);
-
+    this.refreshGame = this.refreshGame.bind(this);
   }
   
   componentDidMount() {
@@ -36,6 +35,7 @@ class MonsterCard extends Component {
     this.getMonster2();
     this.attack1();
     this.attack2();
+    // this.canShowRefreshButton();
   }
 
   getMonster1() {
@@ -44,7 +44,7 @@ class MonsterCard extends Component {
     .then(response => response.data)
     .then(data => data.monsters[randomMonster(20)])
     .then(MonsterInfo => {
-      this.setState({ Monster1: MonsterInfo, isDead: false, score: 15 });
+      this.setState({ Monster1: MonsterInfo, isDead: false });
     });
     choosedPlayer1 -= 1;
   }
@@ -55,7 +55,7 @@ class MonsterCard extends Component {
     .then(response => response.data)
     .then(data => data.monsters[randomMonster(20)])
     .then(MonsterInfo => {
-      this.setState({ Monster2: MonsterInfo, isDead: false, score: 15 });
+      this.setState({ Monster2: MonsterInfo, isDead: false });
     });
     choosedPlayer2 -= 1;
   }
@@ -94,7 +94,14 @@ class MonsterCard extends Component {
     }
   }
 
-
+  refreshGame() {
+    this.setState({Monster1: null})
+    this.setState({Monster2: null})
+    choosedPlayer1 = 0;
+    choosedPlayer2 = 0;
+    tokenPlayer1 = 1;
+    tokenPlayer2 = 1;
+  }
 
   render() {
     return (
@@ -104,7 +111,6 @@ class MonsterCard extends Component {
             <button className="btn-player1" onClick={ choosedPlayer1 === 0 ? this.getMonster1 : null }>
               Choose Player 1
             </button>
-            <h2>{this.Monster1.score}</h2>
             {this.state.Monster1 && choosedPlayer1 !== 0 ? <MonsterInfo infos={this.state.Monster1} /> : <BackCard />}
           </div>
           <div className="score"> prout: {score1}</div>
@@ -114,7 +120,6 @@ class MonsterCard extends Component {
             </button>
             {this.state.Monster2 && choosedPlayer2 !== 0 ? <MonsterInfo infos={this.state.Monster2} /> : <BackCard />}
           <div className="score"> rototo: {score2}</div>
-
           </div>
           <div className="fightButton">
           </div>
@@ -123,10 +128,13 @@ class MonsterCard extends Component {
           <button onClick={tokenPlayer1 > 0 ? this.attack1 : null}>ULTRA BLOODY ATTACK 1</button>
           <button onClick={tokenPlayer2 > 0 ? this.attack2 : null}>ULTRA BLOODY ATTACK 2</button>
         </div>
+        <div className="nextroundButtons">
+          <button className={this.state.Monster1 && this.state.Monster1.isDead === true ? 'refreshButtonShowed' : 'refreshButtonHidden'} onClick={this.refreshGame}>Next Round</button>
+          <button className={this.state.Monster2 && this.state.Monster2.isDead === true ? 'refreshButtonShowed' : 'refreshButtonHidden'} onClick={this.refreshGame}>Next Round</button>
+        </div>
       </div>
     );
   }
 }
-
 
 export default MonsterCard;

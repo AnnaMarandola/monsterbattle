@@ -138,3 +138,7 @@ blockquote p {
     height: 2em;
     ;
 }
+
+.refreshButtonHidden {
+    visibility: hidden;
+}
