@@ -32,8 +32,6 @@ class MonsterCard extends Component {
     this.attack2();
   }
 
-
-  
   getMonster1() {
     axios
     .get('https://hackathon-wild-hackoween.herokuapp.com/monsters')
@@ -92,7 +90,7 @@ class MonsterCard extends Component {
           <button className="btn-player1" onClick={ choosedPlayer2 === 0 ? this.getMonster2 : null }>
             Bloody Player 2
           </button>
-          {this.state.Monster2 && <MonsterInfo infos={this.state.Monster2} />}
+          {this.state.Monster2 && <BackCard />}
         </div>
         <div className="fightButton">
           <button onClick={this.attack1}>ULTRA BLOODY ATTACK 1</button>

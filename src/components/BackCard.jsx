@@ -3,7 +3,10 @@ import './BackCard.css'
 
 function BackCard() {
   return (
-    <div className="container-backcard">
+    <div className="cardBehindButton">
+      <div className="container-backcard">
+        <h1>BLOODY BATTLE</h1>
+      </div>
     </div>
   )
 }
