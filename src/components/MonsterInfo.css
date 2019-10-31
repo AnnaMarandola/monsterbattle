@@ -8,7 +8,7 @@
     .div-globale {
         display: flex;
         justify-content: space-between;
-        ;
+        margin-left: 110px;
     }
     
     .score {
@@ -29,13 +29,14 @@
     
     .btn-player1,
     .btn-player2 {
+        cursor: pointer;
         margin: 2em;
         background-color: rgb(128, 0, 0);
         border: none;
-        padding: 1em 3em 1em 3em;
+        padding: 0.5em 2em;
         color: white;
         box-shadow: 10px 5px 5px #252525;
-        font-size: 15px;
+        font-size: 22px;
     }
     
     .cardBehindButton {
@@ -166,12 +167,13 @@
     }
     
     .attackButtons button {
+        padding: 0.5em 2em 1.7em 2em;
+        cursor: pointer;
         background-color: rgb(128, 0, 0);
         border: none;
-        padding: 1em 3em 2em 3em;
         color: white;
         box-shadow: 10px 5px 5px #252525;
-        font-size: 15px;
+        font-size: 22px;
         margin: 2em 0 1em 0;
         ;
     }
@@ -185,12 +187,13 @@
     }
     
     .refreshButtonShowed {
+        cursor: pointer;
         background-color: rgb(5, 5, 63);
         border: solid rgb(100, 0, 0);
-        padding: 1em 3em 1em 3em;
+        padding: 0.5em 2em;
         color: white;
         box-shadow: 10px 5px 5px #252525;
-        font-size: 15px;
+        font-size: 22px;
         margin-top: 1em;
         border-radius: 10px;
 

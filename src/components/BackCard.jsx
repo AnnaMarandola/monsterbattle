@@ -5,7 +5,7 @@ function BackCard() {
   return (
     <div className="cardBehindButton">
       <div className="container-backcard">
-        <h1>BLOODY BATTLE</h1>
+        <h1>BLOODY <br/>BATTLE</h1>
       </div>
     </div>
   )
