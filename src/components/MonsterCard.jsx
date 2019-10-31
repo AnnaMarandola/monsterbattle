@@ -10,6 +10,8 @@ function randomMonster(max) {
 
 let choosedPlayer1 = 1;
 let choosedPlayer2 = 1;
+let tokenPlayer1 = 1;
+let tokenPlayer2 = 1;
 
 
 class MonsterCard extends Component {
@@ -59,10 +61,13 @@ class MonsterCard extends Component {
     if (this.state.Monster2) {
       if (this.state.Monster2.defense - this.state.Monster1.attack > 0) {
         this.setState({ Monster2: {...this.state.Monster2, defense: (this.state.Monster2.defense - this.state.Monster1.attack)} })
+        tokenPlayer1 -= 1;
+        tokenPlayer2 += 1;
       }
       else {
         this.setState({ Monster2: {...this.state.Monster2, defense: '0', isDead: true}});
-      }
+        tokenPlayer2 = 0;
+        tokenPlayer1 = 0;      }
     }
   }
 
@@ -70,9 +75,13 @@ class MonsterCard extends Component {
     if (this.state.Monster1) {
       if (this.state.Monster1.defense - this.state.Monster2.attack > 0) {
         this.setState({ Monster1: {...this.state.Monster1, defense: (this.state.Monster1.defense - this.state.Monster2.attack)} })
+        tokenPlayer2 -= 1;
+        tokenPlayer1 += 1;
       }
       else {
         this.setState({ Monster1: {...this.state.Monster1, defense: '0', isDead: true}});
+        tokenPlayer1 = 0;
+        tokenPlayer2 = 0;
       }
     }
   }
@@ -97,8 +106,8 @@ class MonsterCard extends Component {
           </div>
         </div>
         <div className="attackButtons">
-          <button onClick={this.attack1}>ULTRA BLOODY ATTACK 1</button>
-          <button onClick={this.attack2}>ULTRA BLOODY ATTACK 2</button>
+          <button onClick={tokenPlayer1 > 0 ? this.attack1 : null}>ULTRA BLOODY ATTACK 1</button>
+          <button onClick={tokenPlayer2 > 0 ? this.attack2 : null}>ULTRA BLOODY ATTACK 2</button>
         </div>
       </div>
     );
