@@ -17,17 +17,17 @@ class MonsterCard extends Component {
     };
     this.getMonster1 = this.getMonster1.bind(this);
     this.getMonster2 = this.getMonster2.bind(this);
-    this.round1 = this.round1.bind(this);
+    this.attack1 = this.attack1.bind(this);
+    this.attack2 = this.attack2.bind(this);
   }
   
   componentDidMount() {
     this.getMonster1();
     this.getMonster2();
-    this.round1();
+    this.attack1();
+    this.attack2();
   }
   
-  componentWillUpdate() {
-  }
   
   getMonster1() {
     axios
@@ -50,21 +50,29 @@ class MonsterCard extends Component {
   }
   
   
-  round1() {
+  attack1() {
     if (this.state.Monster2) {
-      if (this.state.Monster2.defense > 0) {
-        if (this.state.Monster2.defense - this.state.Monster1.attack > 0) {
-          this.setState({ Monster2: {...this.state.Monster2, defense: (this.state.Monster2.defense - this.state.Monster1.attack)} })
-        }
-        else {
-          this.setState({ Monster2: {...this.state.Monster2, defense: 'died'}})
-        }
+      if (this.state.Monster2.defense - this.state.Monster1.attack > 0) {
+        this.setState({ Monster2: {...this.state.Monster2, defense: (this.state.Monster2.defense - this.state.Monster1.attack)} })
       }
-      // else {
-      //   this.setState({ Monster2: {...this.state.Monster2, defense: 'died'}})
-      // }
+      else {
+        this.setState({ Monster2: {...this.state.Monster2, defense: 'died'}})
+      }
     }
   }
+
+  attack2() {
+    if (this.state.Monster1) {
+      if (this.state.Monster1.defense - this.state.Monster2.attack > 0) {
+        this.setState({ Monster1: {...this.state.Monster1, defense: (this.state.Monster1.defense - this.state.Monster2.attack)} })
+      }
+      else {
+        this.setState({ Monster1: {...this.state.Monster1, defense: 'died'}})
+      }
+    }
+  }
+
+
    
   
 
@@ -84,8 +92,8 @@ class MonsterCard extends Component {
           {this.state.Monster2 && <MonsterInfo infos={this.state.Monster2} />}
         </div>
         <div className="fightButton">
-          <button onClick={this.round1}>ULTRA BLOODY ROUND 1</button>
-          <button onClick={this.round2}>ULTRA BLOODY ROUND 2</button>
+          <button onClick={this.attack1}>ULTRA BLOODY ATTACK 1</button>
+          <button onClick={this.attack2}>ULTRA BLOODY ATTACK 2</button>
         </div>
       </div>
     );
