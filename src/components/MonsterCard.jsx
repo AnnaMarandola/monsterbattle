@@ -40,7 +40,7 @@ class MonsterCard extends Component {
     .then(response => response.data)
     .then(data => data.monsters[randomMonster(20)])
     .then(MonsterInfo => {
-      this.setState({ Monster1: MonsterInfo, isDead: false });
+      this.setState({ Monster1: MonsterInfo, isDead: false, score: 15 });
     });
     choosedPlayer1 -= 1;
   }
@@ -51,7 +51,7 @@ class MonsterCard extends Component {
     .then(response => response.data)
     .then(data => data.monsters[randomMonster(20)])
     .then(MonsterInfo => {
-      this.setState({ Monster2: MonsterInfo, isDead: false });
+      this.setState({ Monster2: MonsterInfo, isDead: false, score: 15 });
     });
     choosedPlayer2 -= 1;
   }
@@ -67,7 +67,8 @@ class MonsterCard extends Component {
       else {
         this.setState({ Monster2: {...this.state.Monster2, defense: '0', isDead: true}});
         tokenPlayer2 = 0;
-        tokenPlayer1 = 0;      }
+        tokenPlayer1 = 0;   
+      }
     }
   }
 
@@ -94,6 +95,7 @@ class MonsterCard extends Component {
             <button className="btn-player1" onClick={ choosedPlayer1 === 0 ? this.getMonster1 : null }>
               Choose Player 1
             </button>
+            <h2>{this.Monster1.score}</h2>
             {this.state.Monster1 && choosedPlayer1 !== 0 ? <MonsterInfo infos={this.state.Monster1} /> : <BackCard />}
           </div>
           <div className="player2">
