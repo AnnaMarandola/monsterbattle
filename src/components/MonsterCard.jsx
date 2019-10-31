@@ -117,13 +117,13 @@ class MonsterCard extends Component {
           <div className="score"> SCORE : <br/>{score1}</div>
           <div className="player1">
             <button className="btn-player1" onClick={ choosedPlayer1 === 0 ? this.getMonster1 : null }>
-              Choose Player 1
+              Player 1
             </button>
             {this.state.Monster1 && choosedPlayer1 !== 0 ? <MonsterInfo infos={this.state.Monster1} /> : <BackCard />}
           </div>
           <div className="player2">
             <button className="btn-player2" onClick={ choosedPlayer2 === 0 ? this.getMonster2 : null }>
-              Choose Player 2
+              Player 2
             </button>
             {this.state.Monster2 && choosedPlayer2 !== 0 ? <MonsterInfo infos={this.state.Monster2} /> : <BackCard />}
           </div>
@@ -132,8 +132,8 @@ class MonsterCard extends Component {
           </div>
         </div>
         <div className="attackButtons">
-          <button onClick={tokenPlayer1 > 0 ? this.attack1 : null}>ULTRA BLOODY ATTACK 1</button>
-          <button onClick={tokenPlayer2 > 0 ? this.attack2 : null}>ULTRA BLOODY ATTACK 2</button>
+          <button className= "left-bloody-button" onClick={tokenPlayer1 > 0 ? this.attack1 : null}>ULTRA BLOODY ATTACK</button>
+          <button onClick={tokenPlayer2 > 0 ? this.attack2 : null}>ULTRA BLOODY ATTACK</button>
         </div>
         <div className="nextroundButtons">
           <button className={this.state.Monster1 && this.state.Monster1.isDead === true ? 'refreshButtonShowed' : 'refreshButtonHidden'} onClick={this.refreshGame}>Next Round</button>
