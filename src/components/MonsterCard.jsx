@@ -38,7 +38,7 @@ class MonsterCard extends Component {
     .then(response => response.data)
     .then(data => data.monsters[randomMonster(20)])
     .then(MonsterInfo => {
-      this.setState({ Monster1: MonsterInfo });
+      this.setState({ Monster1: MonsterInfo, isDead: false });
     });
     choosedPlayer1 -= 1;
   }
@@ -49,7 +49,7 @@ class MonsterCard extends Component {
     .then(response => response.data)
     .then(data => data.monsters[randomMonster(20)])
     .then(MonsterInfo => {
-      this.setState({ Monster2: MonsterInfo });
+      this.setState({ Monster2: MonsterInfo, isDead: false });
     });
     choosedPlayer2 -= 1;
   }
@@ -61,7 +61,7 @@ class MonsterCard extends Component {
         this.setState({ Monster2: {...this.state.Monster2, defense: (this.state.Monster2.defense - this.state.Monster1.attack)} })
       }
       else {
-        this.setState({ Monster2: {...this.state.Monster2, defense: 'died'}})
+        this.setState({ Monster2: {...this.state.Monster2, defense: 'died', isDead: true}});
       }
     }
   }
@@ -72,7 +72,7 @@ class MonsterCard extends Component {
         this.setState({ Monster1: {...this.state.Monster1, defense: (this.state.Monster1.defense - this.state.Monster2.attack)} })
       }
       else {
-        this.setState({ Monster1: {...this.state.Monster1, defense: 'died'}})
+        this.setState({ Monster1: {...this.state.Monster1, defense: 'died', isDead: true}});
       }
     }
   }

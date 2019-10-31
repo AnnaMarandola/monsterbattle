@@ -96,3 +96,7 @@ blockquote p {
   height: 60px;
   width: 270px;
 }
+
+.monsterDied img{
+  display: none;
+}

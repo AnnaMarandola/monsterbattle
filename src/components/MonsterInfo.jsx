@@ -3,15 +3,15 @@ import bloodBottomCard from '../assets/bloodBottomCard.png';
 import './MonsterInfo.css';
 
 const MonsterInfo = ({ infos }) => {
-  const { name, picture, special, attack, defense, description } = infos;
+  const { name, picture, special, attack, defense, description, isDead } = infos;
   return (
     <div className="cardBehindButton">
       <figure>
         <div className="nameNspecial">
           <p>{name}</p>
         </div>
-        <div className="imageMonster">
-          <img src={picture} />
+        <div className={isDead ? "monsterDied" : "imageMonster"}>
+          <img src={picture} alt=""/>
         </div>
         <div className="bodyCard">
           <small>{special}</small>
