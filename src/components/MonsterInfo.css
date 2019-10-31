@@ -1,0 +1,214 @@
+    @import url("https://fonts.googleapis.com/css?family=Metal+Mania&display=swap");
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Metal Mania", cursive;
+    }
+    
+    .div-globale {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 110px;
+    }
+    
+    .score {
+        background: rgb(5, 5, 63);
+        border: solid rgb(100, 0, 0) 2px;
+        border-radius: 10px;
+        width: 100px;
+        height: 50px;
+        margin-top: 40px;
+        color: whitesmoke;
+        padding-top: 8px;
+        margin-right: 0;
+    }
+    
+    #score1 {
+        margin-left: 50px;
+    }
+    
+    .btn-player1,
+    .btn-player2 {
+        cursor: pointer;
+        margin: 2em;
+        background-color: rgb(128, 0, 0);
+        border: none;
+        padding: 0.5em 2em;
+        color: white;
+        box-shadow: 10px 5px 5px #252525;
+        font-size: 22px;
+    }
+    
+    .cardBehindButton {
+        display: flex;
+        justify-content: center;
+        width: 290px;
+    }
+    
+    .player1,
+    .player2 {
+        width: 290px;
+    }
+    
+    .player1 {
+        margin-right: 150px;
+    }
+    
+    .player2 {
+        margin-left: 150px;
+    }
+    
+    figure {
+        width: 250px;
+        background-color: rgb(100, 0, 0);
+        border: 10px solid rgb(100, 0, 0);
+        border-right-width: 20px;
+        border-left-width: 20px;
+        box-shadow: 5px 5px 5px #252525;
+        border-radius: 2%;
+        flex-direction: column;
+    }
+    
+    .nameNspecial {
+        height: 35px;
+        padding: 0.4em;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5% 5% 0 0;
+        background-color: #252525;
+        color: white;
+    }
+    
+    .nameNspecial p {
+        font-size: 1em;
+    }
+    
+    small {
+        color: rgb(0, 223, 0);
+        font-weight: bold;
+        align-self: flex-end;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .imageMonster {
+        text-align: center;
+    }
+    
+    .bodyCard {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        justify-content: space-evenly;
+        align-items: center;
+        background-image: url('../assets/blood.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .attackNdefenseContainer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 60%;
+        background-color: transparent;
+    }
+    
+    blockquote {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        text-align: justify;
+        font-size: 0.6em;
+        background-color: #25252563;
+    }
+    
+    blockquote p {
+        margin: 20px;
+        font-size: 13px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .bloodBottomCard {
+        margin-left: 105px;
+        height: 60px;
+        width: 270px;
+    }
+    /* when the monster dies, the imageMonster className changes to monsterDied  */
+    
+    .monsterDied img {
+        display: none;
+    }
+    
+    .monsterDied {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 376px;
+        width: 250px;
+        background-image: url('../assets/skullcrane.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-y: 40px;
+    }
+    
+    .deadText {
+        margin-bottom: 140px;
+        font-size: 4em;
+        color: green;
+    }
+    
+    .attackButtons {
+        height: 4em;
+        display: flex;
+        justify-content: space-around;
+        margin-left: 0;
+    }
+    
+    .attackButtons button {
+        padding: 0.5em 2em 1.7em 2em;
+        cursor: pointer;
+        background-color: rgb(128, 0, 0);
+        border: none;
+        color: white;
+        box-shadow: 10px 5px 5px #252525;
+        font-size: 22px;
+        margin: 2em 0 1em 0;
+        ;
+    }
+
+    .left-bloody-button {
+        margin-left: - 25px;
+    }
+    
+    .refreshButtonHidden {
+        visibility: hidden;
+    }
+    
+    .refreshButtonShowed {
+        cursor: pointer;
+        background-color: rgb(5, 5, 63);
+        border: solid rgb(100, 0, 0);
+        padding: 0.5em 2em;
+        color: white;
+        box-shadow: 10px 5px 5px #252525;
+        font-size: 22px;
+        margin-top: 1em;
+        border-radius: 10px;
+
+    }
+    
+    .App h1 {
+        padding-top: 1em;
+        font-size: 2em;
+        color: red;
+        text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+    }
+    
+    .container-backcard,
+    h1 {
+        display: flex;
+        justify-content: center;
+        ;
+    }
