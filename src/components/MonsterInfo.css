@@ -14,7 +14,7 @@
     .score {
         background: rgb(5, 5, 63);
         border: solid rgb(100, 0, 0) 2px;
-        border-radius: 20px;
+        border-radius: 10px;
         width: 100px;
         height: 50px;
         margin-top: 40px;
@@ -30,7 +30,12 @@
     .btn-player1,
     .btn-player2 {
         margin: 2em;
-        background-color: r;
+        background-color: rgb(128, 0, 0);
+        border: none;
+        padding: 1em 3em 1em 3em;
+        color: white;
+        box-shadow: 10px 5px 5px #252525;
+        font-size: 15px;
     }
     
     .cardBehindButton {
@@ -156,16 +161,39 @@
     .attackButtons {
         height: 4em;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        margin-left: 0;
     }
     
     .attackButtons button {
-        height: 2em;
+        background-color: rgb(128, 0, 0);
+        border: none;
+        padding: 1em 3em 2em 3em;
+        color: white;
+        box-shadow: 10px 5px 5px #252525;
+        font-size: 15px;
+        margin: 2em 0 1em 0;
         ;
+    }
+
+    .left-bloody-button {
+        margin-left: - 25px;
     }
     
     .refreshButtonHidden {
         visibility: hidden;
+    }
+    
+    .refreshButtonShowed {
+        background-color: rgb(5, 5, 63);
+        border: solid rgb(100, 0, 0);
+        padding: 1em 3em 1em 3em;
+        color: white;
+        box-shadow: 10px 5px 5px #252525;
+        font-size: 15px;
+        margin-top: 1em;
+        border-radius: 10px;
+
     }
     
     .App h1 {
