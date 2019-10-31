@@ -1,133 +1,140 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .div-globale {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 
-.btn-player1, .btn-player2 {
-  margin: 2em;
+.score {
+    background: yellow;
+}
+
+.btn-player1,
+.btn-player2 {
+    margin: 2em;
+    background-color: r;
 }
 
 .cardBehindButton {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .player1,
 .player2 {
-  width: 30%;
+    width: 30%;
 }
 
 figure {
-  width: 250px;
-  background-color: rgb(100, 0, 0);
-  border: 10px solid rgb(100, 0, 0);
-  border-right-width: 20px;
-  border-left-width: 20px;
-  box-shadow: 5px 5px 5px #252525;
-  border-radius: 2%;
-  flex-direction: column;
+    width: 250px;
+    background-color: rgb(100, 0, 0);
+    border: 10px solid rgb(100, 0, 0);
+    border-right-width: 20px;
+    border-left-width: 20px;
+    box-shadow: 5px 5px 5px #252525;
+    border-radius: 2%;
+    flex-direction: column;
 }
 
 .nameNspecial {
-  height: 35px;
-  padding: 0.4em;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 5% 5% 0 0;
-  background-color: #252525;
-  color: white;
+    height: 35px;
+    padding: 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5% 5% 0 0;
+    background-color: #252525;
+    color: white;
 }
 
 .nameNspecial p {
- font-size: 1em;
+    font-size: 1em;
 }
 
 small {
-  color: rgb(0, 223, 0);
-  font-weight: bold;
-  align-self: flex-end;
+    color: rgb(0, 223, 0);
+    font-weight: bold;
+    align-self: flex-end;
 }
 
 .imageMonster {
-  text-align: center;
+    text-align: center;
 }
 
 .bodyCard {
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  justify-content: space-evenly;
-  align-items: center;
-  background-image: url('../assets/blood.png');
-  background-size: contain;
-  background-repeat: no-repeat;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url('../assets/blood.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .attackNdefenseContainer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 60%;
-  background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    background-color: transparent;
 }
 
 blockquote {
-  display: flex;
-  align-items: center;
-  height: 60px;
-  text-align: justify;
-  font-size: 0.6em;
-  background-color: #25252563;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-align: justify;
+    font-size: 0.6em;
+    background-color: #25252563;
 }
 
 blockquote p {
-  margin: 8%;
+    margin: 8%;
 }
 
 .bloodBottomCard {
-  margin-left: 105px;
-  height: 60px;
-  width: 270px;
+    margin-left: 105px;
+    height: 60px;
+    width: 270px;
 }
+
 
 /* when the monster dies, the imageMonster className changes to monsterDied  */
 
-.monsterDied img{
-  display: none;
+.monsterDied img {
+    display: none;
 }
 
 .monsterDied {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 376px;
-  width: 250px;
-  background-image: url('../assets/skullcrane.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-y: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 376px;
+    width: 250px;
+    background-image: url('../assets/skullcrane.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: 40px;
 }
 
 .deadText {
-  margin-bottom: 140px;
-  font-size: 4em;
-  color: green;
+    margin-bottom: 140px;
+    font-size: 4em;
+    color: green;
 }
 
-
 .attackButtons {
-  height: 4em;
-  display: flex;
-  justify-content: space-between;
+    height: 4em;
+    display: flex;
+    justify-content: space-between;
 }
 
 .attackButtons button {
-  height: 2em;;
+    height: 2em;
+    ;
 }
