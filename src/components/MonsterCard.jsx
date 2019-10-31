@@ -35,7 +35,6 @@ class MonsterCard extends Component {
     this.getMonster2();
     this.attack1();
     this.attack2();
-    // this.canShowRefreshButton();
   }
 
   getMonster1() {
