@@ -97,6 +97,37 @@ blockquote p {
   width: 270px;
 }
 
+/* when the monster dies, the imageMonster className changes to monsterDied  */
+
 .monsterDied img{
   display: none;
+}
+
+.monsterDied {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 376px;
+  width: 250px;
+  background-image: url('../assets/skullcrane.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 40px;
+}
+
+.deadText {
+  margin-bottom: 140px;
+  font-size: 4em;
+  color: green;
+}
+
+
+.attackButtons {
+  height: 4em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.attackButtons button {
+  height: 2em;;
 }

@@ -61,7 +61,7 @@ class MonsterCard extends Component {
         this.setState({ Monster2: {...this.state.Monster2, defense: (this.state.Monster2.defense - this.state.Monster1.attack)} })
       }
       else {
-        this.setState({ Monster2: {...this.state.Monster2, defense: 'died', isDead: true}});
+        this.setState({ Monster2: {...this.state.Monster2, defense: '0', isDead: true}});
       }
     }
   }
@@ -72,27 +72,31 @@ class MonsterCard extends Component {
         this.setState({ Monster1: {...this.state.Monster1, defense: (this.state.Monster1.defense - this.state.Monster2.attack)} })
       }
       else {
-        this.setState({ Monster1: {...this.state.Monster1, defense: 'died', isDead: true}});
+        this.setState({ Monster1: {...this.state.Monster1, defense: '0', isDead: true}});
       }
     }
   }
 
   render() {
     return (
-      <div className="div-globale">
-        <div className="player1">
-          <button className="btn-player1" onClick={ choosedPlayer1 === 0 ? this.getMonster1 : null }>
-            Bloody Player 1
-          </button>
-          {this.state.Monster1 && choosedPlayer1 !== 0 ? <MonsterInfo infos={this.state.Monster1} /> : <BackCard />}
+      <div>
+        <div className="div-globale">
+          <div className="player1">
+            <button className="btn-player1" onClick={ choosedPlayer1 === 0 ? this.getMonster1 : null }>
+              Choose Player 1
+            </button>
+            {this.state.Monster1 && choosedPlayer1 !== 0 ? <MonsterInfo infos={this.state.Monster1} /> : <BackCard />}
+          </div>
+          <div className="player2">
+            <button className="btn-player2" onClick={ choosedPlayer2 === 0 ? this.getMonster2 : null }>
+              Choose Player 2
+            </button>
+            {this.state.Monster2 && choosedPlayer2 !== 0 ? <MonsterInfo infos={this.state.Monster2} /> : <BackCard />}
+          </div>
+          <div className="fightButton">
+          </div>
         </div>
-        <div className="player2">
-          <button className="btn-player2" onClick={ choosedPlayer2 === 0 ? this.getMonster2 : null }>
-            Bloody Player 2
-          </button>
-          {this.state.Monster2 && choosedPlayer2 !== 0 ? <MonsterInfo infos={this.state.Monster2} /> : <BackCard />}
-        </div>
-        <div className="fightButton">
+        <div className="attackButtons">
           <button onClick={this.attack1}>ULTRA BLOODY ATTACK 1</button>
           <button onClick={this.attack2}>ULTRA BLOODY ATTACK 2</button>
         </div>

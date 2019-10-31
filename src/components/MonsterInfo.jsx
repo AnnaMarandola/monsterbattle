@@ -12,6 +12,7 @@ const MonsterInfo = ({ infos }) => {
         </div>
         <div className={isDead ? "monsterDied" : "imageMonster"}>
           <img src={picture} alt=""/>
+          {isDead ? <p className="deadText">DEAD</p> : null}
         </div>
         <div className="bodyCard">
           <small>{special}</small>
