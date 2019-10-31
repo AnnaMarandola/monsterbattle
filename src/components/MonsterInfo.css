@@ -82,6 +82,7 @@
         color: rgb(0, 223, 0);
         font-weight: bold;
         align-self: flex-end;
+        font-family: 'Times New Roman', Times, serif;
     }
     
     .imageMonster {
@@ -111,7 +112,7 @@
     blockquote {
         display: flex;
         align-items: center;
-        height: 60px;
+        height: 70px;
         text-align: justify;
         font-size: 0.6em;
         background-color: #25252563;
@@ -119,6 +120,8 @@
     
     blockquote p {
         margin: 20px;
+        font-size: 13px;
+        font-family: 'Times New Roman', Times, serif;
     }
     
     .bloodBottomCard {
@@ -169,6 +172,7 @@
         padding-top: 1em;
         font-size: 2em;
         color: red;
+        text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
     }
     
     .container-backcard,
