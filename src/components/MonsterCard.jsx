@@ -7,6 +7,9 @@ function randomMonster(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+let choosedPlayer1 = 1;
+let choosedPlayer2 = 1;
+
 
 class MonsterCard extends Component {
   constructor(props) {
@@ -37,6 +40,7 @@ class MonsterCard extends Component {
     .then(MonsterInfo => {
       this.setState({ Monster1: MonsterInfo });
     });
+    choosedPlayer1 -= 1;
   }
   
   getMonster2() {
@@ -47,6 +51,7 @@ class MonsterCard extends Component {
     .then(MonsterInfo => {
       this.setState({ Monster2: MonsterInfo });
     });
+    choosedPlayer2 -= 1;
   }
   
   
@@ -72,21 +77,17 @@ class MonsterCard extends Component {
     }
   }
 
-
-   
-  
-
   render() {
     return (
       <div className="div-globale">
         <div className="player1">
-          <button className="btn-player1" onClick={this.getMonster1}>
+          <button className="btn-player1" onClick={ choosedPlayer1 === 0 ? this.getMonster1 : null }>
             Bloody Player 1
           </button>
           {this.state.Monster1 && <MonsterInfo infos={this.state.Monster1} />}
         </div>
         <div className="player2">
-          <button className="btn-player1" onClick={this.getMonster2}>
+          <button className="btn-player1" onClick={ choosedPlayer2 === 0 ? this.getMonster2 : null }>
             Bloody Player 2
           </button>
           {this.state.Monster2 && <MonsterInfo infos={this.state.Monster2} />}
