@@ -41,6 +41,10 @@ class MonsterCard extends Component {
       });
   }
 
+  attack ({attack, defense}) {
+    this.setState({Monster2: defense})
+    return defense - attack
+}
   render() {
     return (
       <div className="div-globale">
