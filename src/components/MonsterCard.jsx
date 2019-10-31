@@ -106,20 +106,20 @@ class MonsterCard extends Component {
     return (
       <div>
         <div className="div-globale">
+          <div className="score"> SCORE : <br/>{score1}</div>
           <div className="player1">
             <button className="btn-player1" onClick={ choosedPlayer1 === 0 ? this.getMonster1 : null }>
               Choose Player 1
             </button>
             {this.state.Monster1 && choosedPlayer1 !== 0 ? <MonsterInfo infos={this.state.Monster1} /> : <BackCard />}
           </div>
-          <div className="score"> prout: {score1}</div>
           <div className="player2">
             <button className="btn-player2" onClick={ choosedPlayer2 === 0 ? this.getMonster2 : null }>
               Choose Player 2
             </button>
             {this.state.Monster2 && choosedPlayer2 !== 0 ? <MonsterInfo infos={this.state.Monster2} /> : <BackCard />}
-          <div className="score"> rototo: {score2}</div>
           </div>
+          <div className="score"> SCORE : <br/> {score2}</div>
           <div className="fightButton">
           </div>
         </div>
