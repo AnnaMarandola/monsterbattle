@@ -61,7 +61,10 @@ class MonsterCard extends Component {
         this.setState({ Monster2: {...this.state.Monster2, defense: (this.state.Monster2.defense - this.state.Monster1.attack)} })
       }
       else {
-        this.setState({ Monster2: {...this.state.Monster2, defense: '0', isDead: true}});
+        this.setState(
+          { Monster2: {...this.state.Monster2, defense: '0', isDead: true }},
+          // { Monster2 : null}
+          );
       }
     }
   }
