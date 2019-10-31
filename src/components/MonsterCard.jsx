@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MonsterInfo from './MonsterInfo';
+import BackCard from './BackCard'
 import './MonsterInfo.css';
 
 function randomMonster(max) {
@@ -30,7 +31,8 @@ class MonsterCard extends Component {
     this.attack1();
     this.attack2();
   }
-  
+
+
   
   getMonster1() {
     axios
